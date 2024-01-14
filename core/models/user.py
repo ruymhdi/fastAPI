@@ -4,7 +4,7 @@ from sqlalchemy import String
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from . post import Post
+	from .post import Post
 
 
 class User(Base):
