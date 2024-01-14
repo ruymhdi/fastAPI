@@ -5,7 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String, Text
 
 
-class Post(UserRelationMixin,Base):
+class Post(UserRelationMixin, Base):
     # _user_id_nullable = False
     # _user_id_unique = False
     _user_back_populates = "posts"
@@ -15,4 +15,10 @@ class Post(UserRelationMixin,Base):
 	    Text, 
 		default="",
 		server_default="",
-    )
+  )
+
+def __str__(self):
+	return f"{self.__class__.__name__}(id={self.id}, username={self.username!r}, user_id={self.user_id})"
+	
+def __repr__(self):
+	return str(self)

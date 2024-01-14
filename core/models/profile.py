@@ -15,3 +15,4 @@ class Profile(UserRelationMixin, Base):
 	first_name: Mapped[str | None] = mapped_column(String(40), unique=False)
 	last_name: Mapped[str | None] = mapped_column(String(40), unique=False)
 	bio: Mapped[str | None]
+	
