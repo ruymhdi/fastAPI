@@ -2,7 +2,6 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import declared_attr, Mapped, mapped_column, relationship
 from typing import TYPE_CHECKING
 
-
 if TYPE_CHECKING:
     from .user import User
 
@@ -20,8 +19,9 @@ class UserRelationMixin:
         )
     
     @declared_attr
-    def user_id(cls) -> Mapped["User"]:
+    def user(cls) -> Mapped["User"]:
         return relationship(
             "User",
-            unique=cls._user_back_populates,
+            back_populates=cls._user_back_populates,
         )
+    
