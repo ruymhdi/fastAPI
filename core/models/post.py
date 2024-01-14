@@ -12,7 +12,7 @@ class Post(UserRelationMixin,Base):
 
     title: Mapped[str] = mapped_column(String(100), unique=False)
     body: Mapped[str] = mapped_column(
-	      Text, 
-		    default="",
-		    server_default="",
+	    Text, 
+		default="",
+		server_default="",
     )
