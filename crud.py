@@ -120,39 +120,6 @@ async def get_profiles_with_users_and_users_with_posts(session: AsyncSession):
 
 async def main():
     async with db_helper.session_factory() as session:
-        # await create_user(session=session, username="john")
-        # await create_user(session=session, username="alice")
-        # await create_user(session=session, username="sam")
-        # user_sam = await get_user_by_username(session=session, username="sam")
-        # user_john = await get_user_by_username(session=session, username="john")    
-        # await get_user_by_username(session=session, username="sam")
-        # await create_user_profile(
-        #     session=session,
-        #     user_id=user_john.id,
-        #     first_name="John",
-        # )
-        # await create_user_profile(
-        #     session=session,
-        #     user_id=user_john.id,
-        #     first_name="Sam",
-        #     last_name="White",
-        # )
-        # await show_users_with_profiles(session=session)
-  
-        # await create_posts(
-        #     session,
-        #     user_john.id,
-        #     "SQLA 2.0",
-        #     "SQLA Joins",
-        # )
-     
-        # await create_posts(
-        #     session,
-        #     user_sam.id,
-        #     "FastAPI intro",
-        #     "FastAPI advanced",
-        #     "FastAPI more",
-        # )
         await get_user_with_posts_and_profiles(session=session)
         
 
